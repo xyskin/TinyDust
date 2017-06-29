@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-		public float speed;
+
         
         private void Start()
         {
@@ -39,7 +39,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             bool crouch = Input.GetKey(KeyCode.C);
 
         
-			m_Move = v*Vector3.forward*speed + h*Vector3.right*speed;
+			m_Move = v*Vector3.forward*100 + h*Vector3.right*100;
 
 
             // pass all parameters to the character control script

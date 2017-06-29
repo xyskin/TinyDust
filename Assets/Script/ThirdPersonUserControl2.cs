@@ -12,12 +12,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
 		public Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-		public float speed;
-		private Transform m_lastTrans;
-		public float del_speed;
+
         private void Start()
         {
-			m_lastTrans=this.transform;
+			
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -53,16 +51,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             float v = CrossPlatformInputManager.GetAxis("Vertical2");
             bool crouch = Input.GetKey(KeyCode.C);
 
-			Vector3 vel=this.transform.position-m_lastTrans.position;
-			del_speed= Vector3.Magnitude (vel);
-            m_Move = v*Vector3.forward*speed + h*Vector3.right*speed;
+		
+            m_Move = v*Vector3.forward*100 + h*Vector3.right*100;
 			//this.GetComponent<Rigidbody> ().AddForce (m_Move);
 			//if (del_speed != 0)
 				//this.transform.position = m_lastTrans.position;
             // pass all parameters to the character control script
 			this.transform.Translate(m_Move,Space.World);
             m_Jump = false;
-			m_lastTrans = this.transform;
+
         }
     }
 }
