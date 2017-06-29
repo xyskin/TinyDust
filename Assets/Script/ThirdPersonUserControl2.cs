@@ -15,21 +15,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Start()
         {
-			
-            // get the transform of the main camera
-            if (Camera.main != null)
-            {
-                //m_Cam = Camera.main.transform;
-            }
-            else
-            {
-                Debug.LogWarning(
-                    "Warning: no main camera found. Third person character needs a Camera tagged \"MainCamera\", for camera-relative controls.", gameObject);
-                // we use self-relative controls in this case, which probably isn't what the user wants, but hey, we warned them!
-            }
-
-            // get the third person character ( this should never be null due to require component )
-          
+			 
         }
 
 
@@ -49,17 +35,28 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Horizontal2");
             float v = CrossPlatformInputManager.GetAxis("Vertical2");
-            bool crouch = Input.GetKey(KeyCode.C);
+         	 
 
-		
             m_Move = v*Vector3.forward*100 + h*Vector3.right*100;
-			//this.GetComponent<Rigidbody> ().AddForce (m_Move);
-			//if (del_speed != 0)
-				//this.transform.position = m_lastTrans.position;
-            // pass all parameters to the character control script
+
 			this.transform.Translate(m_Move,Space.World);
-            m_Jump = false;
+            //m_Jump = false;
 
         }
+		void OnTriggerEnter(Collider obj){
+			if (obj.GetComponent<Rigidbody>()!=null) {
+				obj.GetComponent<Rigidbody> ().isKinematic = false;
+			}
+				this.GetComponent<Rigidbody> ().isKinematic = false;
+			
+		}
+
+		void OnTriggerExit(Collider obj){
+			if (obj.GetComponent<Rigidbody> () != null&&obj.name!="Sphere") {
+				obj.GetComponent<Rigidbody> ().isKinematic = true;
+			}
+				this.GetComponent<Rigidbody> ().isKinematic = true;
+			
+		}
     }
 }
