@@ -43,20 +43,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //m_Jump = false;
 
         }
-		void OnTriggerEnter(Collider obj){
-			if (obj.GetComponent<Rigidbody>()!=null) {
-				obj.GetComponent<Rigidbody> ().isKinematic = false;
-			}
-				this.GetComponent<Rigidbody> ().isKinematic = false;
-			
-		}
+		//void OnTriggerEnter(Collider obj){
+		//	if (obj.GetComponent<Rigidbody>()!=null) {
+		//		obj.GetComponent<Rigidbody> ().isKinematic = false;
+		//	}
+		//		this.GetComponent<Rigidbody> ().isKinematic = false;
+		//	
+		//}
 
-		void OnTriggerExit(Collider obj){
-			if (obj.GetComponent<Rigidbody> () != null&&obj.name!="Sphere") {
-				obj.GetComponent<Rigidbody> ().isKinematic = true;
-			}
-				this.GetComponent<Rigidbody> ().isKinematic = true;
+		//void OnTriggerExit(Collider obj){
+		//	if (obj.GetComponent<Rigidbody> () != null&&obj.name!="Sphere") {
+		//		obj.GetComponent<Rigidbody> ().isKinematic = true;
+		//	}
+		//		this.GetComponent<Rigidbody> ().isKinematic = true;
 			
-		}
+		//}
     }
 }
