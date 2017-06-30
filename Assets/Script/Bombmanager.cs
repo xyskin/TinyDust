@@ -15,16 +15,13 @@ public class Bombmanager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (bomb!=null&&text.text == "0.0") {
+		if (bomb!=null&&10-a.deltaT<=0) {
 			Debug.Log("Times up!");
-			a.startTime = Time.realtimeSinceStartup;
 			destroy ();
+
+			Invoke ("create",5f);
 		}
-		if (bomb==null&&5 - a.deltaT <= 0) {
-			Debug.Log("T");
-			a.startTime = Time.realtimeSinceStartup;
-			create ();
-		}
+
 	}
 	void create(){
 	//TODO-create a bomb
@@ -32,7 +29,7 @@ public class Bombmanager : MonoBehaviour {
 		bomb.name = "bomb" + index;
 		index++;
 		exp.Sphere = bomb;
-
+		a.startTime = Time.realtimeSinceStartup;
 		bomb.transform.position =new Vector3 (Random.Range(-3000,3000),250,Random.Range(-3000,3000));
 	}
 	void destroy(){
