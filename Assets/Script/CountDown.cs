@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CountDown : MonoBehaviour {
 	float fps=0;
-	float startTime=0;
+	public float startTime=0;
 	public float deltaT;
 	public Text text;
 	// Use this for initialization
@@ -14,7 +14,6 @@ public class CountDown : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		fps = 1 / Time.deltaTime;
 		deltaT = Time.realtimeSinceStartup - startTime;
 		//Debug.Log (deltaT.ToString ("f2"));
 

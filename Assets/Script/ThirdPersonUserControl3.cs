@@ -33,8 +33,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void FixedUpdate()
         {
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal1");
-            float v = CrossPlatformInputManager.GetAxis("Vertical1");
+            float h = CrossPlatformInputManager.GetAxis("Horizontal3");
+            float v = CrossPlatformInputManager.GetAxis("Vertical3");
         
 			m_Move = v*Vector3.forward*100 + h*Vector3.right*100;
 
