@@ -23,7 +23,7 @@ public class Pause : MonoBehaviour {
 			this.GetComponent<RawImage>().color = new Color(1, 1, 1, 0);
 			Time.timeScale = 1;
 			pauseend = Time.realtimeSinceStartup;
-			pausedelt = pauseend - pausestart + pausedelt;
+			
 		}
 		if (s.isStart == true && Input.GetKeyUp(KeyCode.Escape) && ispause == false)
 		{
