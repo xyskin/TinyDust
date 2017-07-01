@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Bombmanager : MonoBehaviour {
 	public GameObject bomb,bombprefb;
-	public CountDown a;
+	public Startbutton a;
 	public Explosion exp;
 	public Text text;
 	int index=0;
@@ -27,7 +27,7 @@ public class Bombmanager : MonoBehaviour {
 		bomb.name = "bomb" + index;
 		index++;
 		exp.Sphere = bomb;
-		a.startTime = Time.realtimeSinceStartup;
+		a.Starttime = Time.realtimeSinceStartup;
 		bomb.transform.position =new Vector3 (Random.Range(-3000,3000),250,Random.Range(-3000,3000));
 		//Destroy(bomb.gameObject, 10f);
 		destroy();
@@ -36,7 +36,7 @@ public class Bombmanager : MonoBehaviour {
 	//TODO- destroy
 		Debug.Log("Des "+bomb.name);
 		Destroy(bomb.gameObject,10f);
-		a.startTime = Time.realtimeSinceStartup;
+		a.Starttime = Time.realtimeSinceStartup;
 		StartCoroutine(ShowA());
 	}
 	private IEnumerator ShowA()

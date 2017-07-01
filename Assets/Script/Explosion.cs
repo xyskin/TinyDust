@@ -11,6 +11,7 @@ public class Explosion : MonoBehaviour
 	public Text text;
 	private float dis1, dis2, dis3, dis4;
 	private Color green;
+	public DeathandOver d;
 	// Use this for initialization
 	void Start ()
 	{
@@ -20,7 +21,7 @@ public class Explosion : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (text.text == "0.1") {
+		if (text.text == "0.1"&&d.isStart==true) {
 			//Time.timeScale = 0;
 			if (cha1 != null)
 				dis1 = Vector3.Distance(cha1.transform.position, Sphere.transform.position);
