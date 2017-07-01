@@ -22,10 +22,14 @@ public class Explosion : MonoBehaviour
 	{
 		if (text.text == "0.1") {
 			//Time.timeScale = 0;
-			dis1 = Vector3.Distance (cha1.transform.position, Sphere.transform.position);
-			dis2 = Vector3.Distance (cha2.transform.position, Sphere.transform.position);
-			dis3 = Vector3.Distance (cha3.transform.position, Sphere.transform.position);
-			dis4 = Vector3.Distance (cha4.transform.position, Sphere.transform.position);
+			if (cha1 != null)
+				dis1 = Vector3.Distance(cha1.transform.position, Sphere.transform.position);
+			if (cha2 != null)
+				dis2 = Vector3.Distance(cha2.transform.position, Sphere.transform.position);
+			if (cha3 != null)
+				dis3 = Vector3.Distance(cha3.transform.position, Sphere.transform.position);
+			if (cha4 != null)
+				dis4 = Vector3.Distance(cha4.transform.position, Sphere.transform.position);
 			if (dis1 <= 6133){
 				chahealth1.value -= (40 - 0.0065f * dis1);
 				chahealth1.GetComponentsInChildren<Image> () [1].color = new Color(1-chahealth1.value/100,chahealth1.value/100,0,1);
