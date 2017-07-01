@@ -10,21 +10,16 @@ public class Bombmanager : MonoBehaviour {
 	int index=0;
 	// Use this for initialization
 	void Start () {
-		create ();
+		create();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (bomb!=null&&text.text == "0.0") {
-			Debug.Log("Times up!");
-			a.startTime = Time.realtimeSinceStartup;
-			destroy ();
-		}
-		if (bomb==null&&5 - a.deltaT <= 0) {
-			Debug.Log("T");
-			a.startTime = Time.realtimeSinceStartup;
-			create ();
-		}
+		//if(bomb==null&&10f-a.deltaT==0)
+			//Invoke ("create",5f);
+	
+
 	}
 	void create(){
 	//TODO-create a bomb
@@ -32,13 +27,27 @@ public class Bombmanager : MonoBehaviour {
 		bomb.name = "bomb" + index;
 		index++;
 		exp.Sphere = bomb;
-
+		a.startTime = Time.realtimeSinceStartup;
 		bomb.transform.position =new Vector3 (Random.Range(-3000,3000),250,Random.Range(-3000,3000));
+		//Destroy(bomb.gameObject, 10f);
+		destroy();
 	}
 	void destroy(){
 	//TODO- destroy
 		Debug.Log("Des "+bomb.name);
-		DestroyImmediate(bomb);
+		Destroy(bomb.gameObject,10f);
+		a.startTime = Time.realtimeSinceStartup;
+		StartCoroutine(ShowA());
+	}
+	private IEnumerator ShowA()
+	{
+		yield return new WaitForSeconds(15);
+		create();
+	}
+
+	private void ShowB()
+	{
+		create();
 	}
 
 }

@@ -20,7 +20,7 @@ public class Explosion : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (text.text == "0.0") {
+		if (text.text == "0.1") {
 			//Time.timeScale = 0;
 			dis1 = Vector3.Distance (cha1.transform.position, Sphere.transform.position);
 			dis2 = Vector3.Distance (cha2.transform.position, Sphere.transform.position);
