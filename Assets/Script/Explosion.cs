@@ -21,7 +21,7 @@ public class Explosion : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (text.text == "0.1"&&d.isStart==true) {
+		if (text.text == "0.10"&&d.isStart==true) {
 			//Time.timeScale = 0;
 			if (cha1 != null)
 				dis1 = Vector3.Distance(cha1.transform.position, Sphere.transform.position);
@@ -33,11 +33,11 @@ public class Explosion : MonoBehaviour
 				dis4 = Vector3.Distance(cha4.transform.position, Sphere.transform.position);
 			if (dis1 <= 6133){
 				chahealth1.value -= (40 - 0.0065f * dis1);
-				chahealth1.GetComponentsInChildren<Image> () [1].color = new Color(1-chahealth1.value/100,chahealth1.value/100,0,1);
+				chahealth1.GetComponentsInChildren<Image>()[1].color = new Color(1 - chahealth1.value / 100, chahealth1.value / 100, 0, 1);
 			}
 			if (dis2 <= 6133){
 				chahealth2.value -= (40 - 0.0065f * dis2);
-				chahealth2.GetComponentsInChildren<Image> () [1].color = new Color(1-chahealth2.value/100,chahealth2.value/100,0,1);
+				chahealth2.GetComponentsInChildren<Image>()[1].color = new Color(1 - chahealth2.value / 100, chahealth2.value / 100, 0, 1);
 			}
 			if (dis3 <= 6133) {
 				chahealth3.value -= (40 - 0.0065f * dis3);

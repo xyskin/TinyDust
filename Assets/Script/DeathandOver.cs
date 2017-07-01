@@ -8,8 +8,8 @@ public class DeathandOver : MonoBehaviour {
 	public Startbutton s;
 	public Slider ChaH1, ChaH2, ChaH3, ChaH4;
 	public GameObject cha1, cha2, cha3, cha4;
-	int deaths;
-	int score1, score2, score3, score4;
+	public int deaths;
+	public int score1, score2, score3, score4;
 	// Use this for initialization
 	void Start () {
 		isStart = false;
@@ -48,6 +48,7 @@ public class DeathandOver : MonoBehaviour {
 		}
 		if (deaths >= 3)
 		{
+			Time.timeScale = 0;
 			isStart = false;
 		}
 	}
