@@ -7,6 +7,7 @@ public class Bombmanager : MonoBehaviour {
 	public Startbutton a;
 	public Explosion exp;
 	public Text text;
+	public Pause p;
 	int index=0;
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,8 @@ public class Bombmanager : MonoBehaviour {
 		exp.Sphere = bomb;
 		a.Starttime = Time.realtimeSinceStartup;
 		bomb.transform.position =new Vector3 (Random.Range(-3000,3000),250,Random.Range(-3000,3000));
+		p.pauseend = 0;
+		p.pausestart = 0;
 		//Destroy(bomb.gameObject, 10f);
 		destroy();
 	}
