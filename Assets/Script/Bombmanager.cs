@@ -8,10 +8,13 @@ public class Bombmanager : MonoBehaviour {
 	public Explosion exp;
 	public Text text;
 	public Pause p;
+	public GameObject explosion, explosionprefeb;
+
+	Vector3 v;
 	int index=0;
 	// Use this for initialization
 	void Start () {
-		create();
+		
 		
 	}
 	
@@ -19,10 +22,13 @@ public class Bombmanager : MonoBehaviour {
 	void Update () {
 		//if(bomb==null&&10f-a.deltaT==0)
 			//Invoke ("create",5f);
-	
+		if(bomb!=null)
+			v=bomb.gameObject.transform.position;
+		//if(d.isStart==true&&bomb==null)
+		//	create();
 
 	}
-	void create(){
+	public void create(){
 	//TODO-create a bomb
 		bomb=GameObject.Instantiate(bombprefb);
 		bomb.name = "bomb" + index;
@@ -39,19 +45,28 @@ public class Bombmanager : MonoBehaviour {
 	void destroy(){
 	//TODO- destroy
 		Debug.Log("Des "+bomb.name);
-		Destroy(bomb.gameObject,10f);
+
+
+		Destroy(bomb.gameObject,8f);
+		StartCoroutine(ShowB());
 		a.Starttime = Time.realtimeSinceStartup;
 		StartCoroutine(ShowA());
 	}
 	private IEnumerator ShowA()
 	{
-		yield return new WaitForSeconds(15);
+		yield return new WaitForSeconds(9);
 		create();
 	}
 
-	private void ShowB()
+	private IEnumerator ShowB()
 	{
-		create();
+		yield return new WaitForSeconds (8);
+		b();
 	}
 
+	private void b(){
+		
+		explosion = GameObject.Instantiate(explosionprefeb);
+		explosion.transform.position = new Vector3 (v.x,v.y,v.z);
+	}
 }

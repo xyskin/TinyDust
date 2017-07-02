@@ -31,15 +31,15 @@ public class CountDown : MonoBehaviour {
 			}
 				//Debug.Log (deltaT.ToString ("f2"));
 
-				if (10 - deltaT < 5 && 10 - deltaT > 0)
+				if (8 - deltaT < 3 && 8 - deltaT > 0)
 				{
 					text.color = Color.red;
-					text.text = (10 - deltaT).ToString("f2");
+					text.text = (8 - deltaT).ToString("f2");
 				}
-				else if (10 - deltaT > 5)
+				else if (8 - deltaT > 3)
 				{
 					text.color = Color.black;
-					text.text = (10 - deltaT).ToString("f2");
+					text.text = (8 - deltaT).ToString("f2");
 				}
 				else
 				{

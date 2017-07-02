@@ -8,7 +8,7 @@ public class Startbutton : MonoBehaviour {
 	public RawImage ci1, ci2, ci3, ci4, sbtn, qbtn;
 	public Image mmbg;
 	public DeathandOver d;
-	
+	public Bombmanager create;
 	public float Starttime;
 	// Use this for initialization
 	void Start () {
@@ -39,6 +39,7 @@ public class Startbutton : MonoBehaviour {
 	private void OnClick()
 	{
 		//Debug.Log("111");
+		create.create();
 		Time.timeScale = 1;
 		cha1.value = 100;
 		cha2.value = 100;
