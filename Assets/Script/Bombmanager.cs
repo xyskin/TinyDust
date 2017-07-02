@@ -30,8 +30,9 @@ public class Bombmanager : MonoBehaviour {
 		exp.Sphere = bomb;
 		a.Starttime = Time.realtimeSinceStartup;
 		bomb.transform.position =new Vector3 (Random.Range(-3000,3000),250,Random.Range(-3000,3000));
-		p.pauseend = 0;
-		p.pausestart = 0;
+		//p.pauseend = 0;
+		//p.pausestart = 0;
+		p.pausedelt = 0;
 		//Destroy(bomb.gameObject, 10f);
 		destroy();
 	}

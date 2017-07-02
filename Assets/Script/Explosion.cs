@@ -12,6 +12,7 @@ public class Explosion : MonoBehaviour
 	private float dis1, dis2, dis3, dis4;
 	private Color green;
 	public DeathandOver d;
+	public CountDown c;
 	// Use this for initialization
 	void Start ()
 	{
@@ -19,9 +20,10 @@ public class Explosion : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
-		if (text.text == "0.10"&&d.isStart==true) {
+		if (10 - c.deltaT <= 0.1f && 10 - c.deltaT >= 0.08f && d.isStart == true)
+		{
 			//Time.timeScale = 0;
 			if (cha1 != null)
 				dis1 = Vector3.Distance(cha1.transform.position, Sphere.transform.position);
@@ -31,21 +33,26 @@ public class Explosion : MonoBehaviour
 				dis3 = Vector3.Distance(cha3.transform.position, Sphere.transform.position);
 			if (cha4 != null)
 				dis4 = Vector3.Distance(cha4.transform.position, Sphere.transform.position);
-			if (dis1 <= 6133){
+			if (dis1 <= 6133)
+			{
 				chahealth1.value -= (40 - 0.0065f * dis1);
 				chahealth1.GetComponentsInChildren<Image>()[1].color = new Color(1 - chahealth1.value / 100, chahealth1.value / 100, 0, 1);
 			}
-			if (dis2 <= 6133){
+			if (dis2 <= 6133)
+			{
 				chahealth2.value -= (40 - 0.0065f * dis2);
 				chahealth2.GetComponentsInChildren<Image>()[1].color = new Color(1 - chahealth2.value / 100, chahealth2.value / 100, 0, 1);
 			}
-			if (dis3 <= 6133) {
+			if (dis3 <= 6133)
+			{
 				chahealth3.value -= (40 - 0.0065f * dis3);
-				chahealth3.GetComponentsInChildren<Image> () [1].color = new Color (1 - chahealth3.value / 100, chahealth3.value / 100, 0, 1);
+				chahealth3.GetComponentsInChildren<Image>()[1].color = new Color(1 - chahealth3.value / 100, chahealth3.value / 100, 0, 1);
 			}
 			if (dis4 <= 6133)
-				chahealth4.value -= (40 - 0.0065f * dis4);{
-				chahealth4.GetComponentsInChildren<Image> () [1].color = new Color (1 - chahealth4.value / 100, chahealth4.value / 100, 0, 1);}
+				chahealth4.value -= (40 - 0.0065f * dis4);
+			{
+				chahealth4.GetComponentsInChildren<Image>()[1].color = new Color(1 - chahealth4.value / 100, chahealth4.value / 100, 0, 1);
+			}
 		}
 	}
 }
