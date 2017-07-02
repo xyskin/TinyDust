@@ -10,6 +10,7 @@ public class Startbutton : MonoBehaviour {
 	public DeathandOver d;
 	public Bombmanager create;
 	public float Starttime;
+	public GameObject bgm;
 	// Use this for initialization
 	void Start () {
 		d.isStart = false;
@@ -40,6 +41,7 @@ public class Startbutton : MonoBehaviour {
 	{
 		//Debug.Log("111");
 		create.create();
+
 		Time.timeScale = 1;
 		cha1.value = 100;
 		cha2.value = 100;
@@ -59,6 +61,7 @@ public class Startbutton : MonoBehaviour {
 		this.GetComponent<RawImage>().color = new Color(1, 1, 1, 0);
 		d.isStart = true;
 		Destroy(this,0);
+		Destroy(bgm.gameObject, 0);
 		Starttime = Time.realtimeSinceStartup;
 	}
 }
