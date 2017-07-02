@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Startbutton : MonoBehaviour {
 	public Slider cha1, cha2, cha3, cha4;
 	public RawImage ci1, ci2, ci3, ci4, sbtn, qbtn;
+	public Text text;
 	public Image mmbg;
 	public DeathandOver d;
 	public Bombmanager create;
@@ -59,6 +60,7 @@ public class Startbutton : MonoBehaviour {
 		ci4.GetComponent<RawImage>().color = new Color(1, 1, 1, 1);
 		mmbg.GetComponent<Image>().color = new Color(1, 1, 1, 0);
 		this.GetComponent<RawImage>().color = new Color(1, 1, 1, 0);
+		text.color = new Color (1,1,1,0);
 		d.isStart = true;
 		Destroy(this,0);
 		Destroy(bgm.gameObject, 0);
