@@ -10,6 +10,7 @@ public class DeathandOver : MonoBehaviour {
 	public GameObject cha1, cha2, cha3, cha4;
 	public int deaths;
 	public int score1, score2, score3, score4;
+	public GameObject baozha, baozhaprefeb;
 	// Use this for initialization
 	void Start () {
 		isStart = false;
@@ -49,6 +50,10 @@ public class DeathandOver : MonoBehaviour {
 		if (deaths >= 3)
 		{
 			Time.timeScale = 0;
+			if (baozha == null) 
+			{
+				baozha = GameObject.Instantiate (baozhaprefeb);
+			}
 			isStart = false;
 		}
 	}

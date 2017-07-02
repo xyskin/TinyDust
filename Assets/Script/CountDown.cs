@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class CountDown : MonoBehaviour {
-	float fps=0;
+	//float fps=0;
 	public Pause p;
 	public float deltaT, deltaT2;
 	public Text text;
