@@ -22,7 +22,7 @@ public class Explosion : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (10 - c.deltaT <= 0.1f && 10 - c.deltaT >= 0.08f && d.isStart == true)
+		if (8 - c.deltaT <= 0.1f && 8 - c.deltaT >= 0.08f && d.isStart == true)
 		{
 			//Time.timeScale = 0;
 			if (cha1 != null)
