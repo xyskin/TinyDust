@@ -54,7 +54,7 @@ public class Bombmanager : MonoBehaviour {
 	}
 	private IEnumerator ShowA()
 	{
-		yield return new WaitForSeconds(9);
+		yield return new WaitForSeconds(11);
 		create();
 	}
 
